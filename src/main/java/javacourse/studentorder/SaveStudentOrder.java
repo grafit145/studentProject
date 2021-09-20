@@ -9,6 +9,8 @@ import javacourse.studentorder.domain.StudentOrder;
 import java.time.LocalDate;
 
 public class SaveStudentOrder {
+    final static int MANSERIA = 1000;
+    final static int WOMANSERIA = 2000;
     public static void main(String[] args) {
 //        StudentOrder so = new StudentOrder();
        /* long ans = saveStudentOrder(so);
@@ -36,7 +38,7 @@ public class SaveStudentOrder {
 
         Adult husband = new Adult("Перепедько", "Тарас","Игнатьевич",
                 LocalDate.of(1997, 8,24));
-        husband.setPassportSeria("" + 1000 + id);
+        husband.setPassportSeria("" + (MANSERIA + id));
         husband.setPassportNumber("" + 10000 + id);
         husband.setIssueDate(LocalDate.of(2017, 9, 23));
         husband.setIssueDepartment("Районный отдел полиции №" + id);
@@ -45,19 +47,32 @@ public class SaveStudentOrder {
 
         Adult wife = new Adult("Перепедько", "Галина", "Михайловна",
                 LocalDate.of(1995, 6,16));
-        wife.setPassportSeria("" + 2000 + id);
+        wife.setPassportSeria("" +  (WOMANSERIA + id));
         wife.setPassportNumber("" + 20000 + id);
         wife.setIssueDate(LocalDate.of(2018, 7, 15));
         wife.setIssueDepartment("Районный отдел полиции №" + id);
         wife.setStudentId("" + (20000 + id));
         wife.setAdress(adress);
 
-        Child child = new Child("Перепедько", "Мария", "Тарасовна",
+        Child child1 = new Child("Перепедько", "Мария", "Тарасовна",
                 LocalDate.of(2020, 8,21));
-        child.setCertificateNumber("" + (30000 + id));
-        child.setIssueDate(LocalDate.of(2020,9,3));
-        child.setIssueDepartment("Отдел ЗАГС №" + id);
-        child.setAdress(adress);
+        child1.setCertificateNumber("" + (30000 + id));
+        child1.setIssueDate(LocalDate.of(2020,9,3));
+        child1.setIssueDepartment("Отдел ЗАГС №" + id);
+        child1.setAdress(adress);
+
+        Child child2 = new Child("Перепедько", "Геннадий", "Тарасович",
+                LocalDate.of(2020, 8,21));
+        child2.setCertificateNumber("" + (40000 + id));
+        child2.setIssueDate(LocalDate.of(2020,9,3));
+        child2.setIssueDepartment("Отдел ЗАГС №" + id);
+        child2.setAdress(adress);
+
+
+        so.setHusband(husband);
+        so.setWife(wife);
+        so.addChild(child1);
+        so.addChild(child2);
 
 
         return so;

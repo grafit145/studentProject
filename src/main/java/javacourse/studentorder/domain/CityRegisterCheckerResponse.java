@@ -2,13 +2,13 @@ package javacourse.studentorder.domain;
 
 public class CityRegisterCheckerResponse {
     private boolean existing;
-    private Boolean temporal;
+    private boolean temporal;
 
-    public Boolean getTemporal() {
+    public boolean getTemporal() {
         return temporal;
     }
 
-    public void setTemporal(Boolean temporal) {
+    public void setTemporal(boolean temporal) {
         this.temporal = temporal;
     }
 
@@ -18,5 +18,13 @@ public class CityRegisterCheckerResponse {
 
     public void setExisting(boolean existing) {
         this.existing = existing;
+    }
+
+    @Override
+    public String toString() {
+        return "CityRegisterCheckerResponse{" +
+                "existing=" + existing +
+                ", temporal=" + temporal +
+                '}';
     }
 }
