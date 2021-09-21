@@ -3,7 +3,7 @@ package javacourse.studentorder.validator;
 
 import javacourse.studentorder.domain.Adult;
 import javacourse.studentorder.domain.Child;
-import javacourse.studentorder.domain.CityRegisterCheckerResponse;
+import javacourse.studentorder.domain.register.CityRegisterResponse;
 import javacourse.studentorder.domain.Person;
 import javacourse.studentorder.exeption.CityRegisterExeption;
 
@@ -14,8 +14,8 @@ public class FakeCityRegisterChecker implements CityRegisterChecker{
     public static final String BAD2 = "2001";
     public static final String ERROR1 = "1002";
     public static final String ERROR2 = "2002";
-    public CityRegisterCheckerResponse checkPerson(Person person) throws CityRegisterExeption {
-        CityRegisterCheckerResponse res = new CityRegisterCheckerResponse();
+    public CityRegisterResponse checkPerson(Person person) throws CityRegisterExeption {
+        CityRegisterResponse res = new CityRegisterResponse();
 
         if (person instanceof Adult){
             System.out.println("ADULT");

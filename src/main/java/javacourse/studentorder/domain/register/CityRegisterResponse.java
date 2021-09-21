@@ -1,6 +1,6 @@
-package javacourse.studentorder.domain;
+package javacourse.studentorder.domain.register;
 
-public class CityRegisterCheckerResponse {
+public class CityRegisterResponse {
     private boolean existing;
     private boolean temporal;
 

@@ -2,6 +2,7 @@ package javacourse.studentorder;
 
 
 import javacourse.studentorder.domain.*;
+import javacourse.studentorder.domain.register.AnswerCityRegister;
 import javacourse.studentorder.mail.MailSender;
 import javacourse.studentorder.validator.ChildrenValidator;
 import javacourse.studentorder.validator.CityRegisterValidator;
