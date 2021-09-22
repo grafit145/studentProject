@@ -6,6 +6,7 @@ import javacourse.studentorder.domain.Child;
 import javacourse.studentorder.domain.register.CityRegisterResponse;
 import javacourse.studentorder.domain.Person;
 import javacourse.studentorder.exeption.CityRegisterExeption;
+import javacourse.studentorder.exeption.TransportExeption;
 
 public class FakeCityRegisterChecker implements CityRegisterChecker{
     public static final String GOOD1 = "1000";
@@ -14,7 +15,9 @@ public class FakeCityRegisterChecker implements CityRegisterChecker{
     public static final String BAD2 = "2001";
     public static final String ERROR1 = "1002";
     public static final String ERROR2 = "2002";
-    public CityRegisterResponse checkPerson(Person person) throws CityRegisterExeption {
+    public static final String ERROR_T_1 = "1003";
+    public static final String ERROR_T_2 = "2003";
+    public CityRegisterResponse checkPerson(Person person) throws CityRegisterExeption, TransportExeption {
         CityRegisterResponse res = new CityRegisterResponse();
 
         if (person instanceof Adult){
@@ -32,7 +35,13 @@ public class FakeCityRegisterChecker implements CityRegisterChecker{
 
             }
             if(ps.equals(ERROR1) || ps.equals(ERROR2)){
-                CityRegisterExeption e = new CityRegisterExeption("Fake ERROR" + ps);
+                CityRegisterExeption e = new CityRegisterExeption("1","GRN ERROR" + ps);
+                throw e;
+
+            }
+
+            if(ps.equals(ERROR_T_1) || ps.equals(ERROR_T_2)){
+                TransportExeption e = new TransportExeption("Transport ERROR" + ps);
                 throw e;
 
             }

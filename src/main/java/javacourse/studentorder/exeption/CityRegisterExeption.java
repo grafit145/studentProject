@@ -1,14 +1,20 @@
 package javacourse.studentorder.exeption;
 
 public class CityRegisterExeption extends Exception{
-    public CityRegisterExeption() {
-    }
 
-    public CityRegisterExeption(String message) {
+    private String code;
+
+    public CityRegisterExeption(String code,String message) {
         super(message);
+        this.code = code;
     }
 
-    public CityRegisterExeption(String message, Throwable cause) {
+    public CityRegisterExeption(String code,String message, Throwable cause) {
         super(message, cause);
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
     }
 }
