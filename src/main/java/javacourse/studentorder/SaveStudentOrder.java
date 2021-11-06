@@ -1,17 +1,21 @@
 package javacourse.studentorder;
 
 
-import javacourse.studentorder.domain.Adress;
-import javacourse.studentorder.domain.Adult;
-import javacourse.studentorder.domain.Child;
-import javacourse.studentorder.domain.StudentOrder;
+import javacourse.studentorder.dao.DictionaryDaoImpl;
+import javacourse.studentorder.domain.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class SaveStudentOrder {
     final static int MANSERIA = 1000;
     final static int WOMANSERIA = 2000;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        List<Street> d = new DictionaryDaoImpl().findStreet("tw");
+        for(Street s : d){
+            System.out.println(s);
+        }
+
 //        StudentOrder so = new StudentOrder();
        /* long ans = saveStudentOrder(so);
         System.out.println(ans);
@@ -33,8 +37,8 @@ public class SaveStudentOrder {
         so.setStudentOrderId(id);
         so.setMarriageCertificate("" + (12345600 + id));
         so.setMarriageDate(LocalDate.of(2016, 7, 4));
-        Adress adress = new Adress("195000", "Заневский пр.", "12", "",
-                "142");
+        Street street = new Street(1L,"First street");
+        Adress adress = new Adress("195000", street, "12", "", "142");
 
         Adult husband = new Adult("Перепедько", "Тарас","Игнатьевич",
                 LocalDate.of(1997, 8,24));

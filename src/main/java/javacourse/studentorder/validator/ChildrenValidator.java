@@ -1,6 +1,6 @@
 package javacourse.studentorder.validator;
 
-import javacourse.studentorder.domain.AnswerChildren;
+import javacourse.studentorder.domain.children.AnswerChildren;
 import javacourse.studentorder.domain.StudentOrder;
 
 public class ChildrenValidator {

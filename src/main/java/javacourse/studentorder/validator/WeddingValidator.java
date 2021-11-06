@@ -1,6 +1,6 @@
 package javacourse.studentorder.validator;
 
-import javacourse.studentorder.domain.AnswerWedding;
+import javacourse.studentorder.domain.wedding.AnswerWedding;
 import javacourse.studentorder.domain.StudentOrder;
 
 public class WeddingValidator {
